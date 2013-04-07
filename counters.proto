@@ -1,0 +1,15 @@
+package counters;
+
+message CountRequest {
+  required string name = 1;
+}
+
+message CountResponse {
+  required int32 count = 1;
+}
+
+service CountersService {
+  rpc Increment(CountRequest)   returns (CountResponse);
+  rpc Decrement(CountRequest)   returns (CountResponse);
+  rpc Get(CountRequest)         returns (CountResponse);
+}
