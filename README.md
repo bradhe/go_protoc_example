@@ -37,3 +37,31 @@ protoc --go_out=src/counters counters.proto
 ```
 
 It should return silently if nothing bad happened!
+
+## Build the client and server
+
+Pretty straight forward:
+
+``` bash
+go build counters_client
+go build counters_server
+```
+
+If your `GOPATH` isn't set yet:
+
+``` bash
+export GOPATH=`pwd`
+```
+
+## Start the Server
+
+``` bash
+./counters_server
+```
+
+### Run the client
+
+``` bash
+$ ./counters_client inc "Hello, World"
+Hello, World: 1
+```
