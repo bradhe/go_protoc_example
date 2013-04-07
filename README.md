@@ -59,7 +59,7 @@ export GOPATH=`pwd`
 ./counters_server
 ```
 
-### Run the client
+## Run the client
 
 ``` bash
 $ ./counters_client inc "Hello, World"
