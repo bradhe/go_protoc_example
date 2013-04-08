@@ -17,7 +17,7 @@ make
 sudo make install
 ```
 
-*NOTE:* This has only been tested on OSX, but should work with any Unix that
+**NOTE:** This has only been tested on OSX, but should work with any Unix that
 has GCC installed.
 
 To install the Go generator for protoc:
@@ -73,4 +73,4 @@ I'd really love to hear your thoughts. How can I make this more idiomatic? Are t
 1. Fork this repo.
 1. Commit any fixes/changes/etc.
 1. If you are so compelled, send a pull request.
-1. Send me an email, if you want: (brad.heller@gmail.com)[mailto: brad.heller@gmail.com]
+1. Send me an email, if you want: brad.heller@gmail.com
