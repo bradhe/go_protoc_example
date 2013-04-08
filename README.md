@@ -1,9 +1,9 @@
-# Protocol Buffers, Go, and RPC
+# Up and running with Go, Protocol Buffers, and RPC
 
 This is an example project that shows how to set up and use protocol buffers
 and RPC with Go.
 
-## Installing the Procotol Buffers compiler, `protoc`
+## 1. Installing the Procotol Buffers compiler, `protoc`
 
 To install the base protocol buffers compiler:
 
@@ -28,7 +28,7 @@ go get -v -u github.com/kylelemons/go-rpcgen/protoc-gen-go
 
 And we're done!
 
-## Generate the Go code services
+## 2. Generate the Go code
 
 Note that you'll have to do this step before this code will build.
 
@@ -38,7 +38,7 @@ protoc --go_out=src/counters counters.proto
 
 It should return silently if nothing bad happened!
 
-## Build the client and server
+## 3. Build and run the client and server
 
 Pretty straight forward:
 
@@ -53,15 +53,24 @@ If your `GOPATH` isn't set yet:
 export GOPATH=`pwd`
 ```
 
-## Start the Server
+### Start the Server
 
 ``` bash
 ./counters_server
 ```
 
-## Run the client
+### Run the client
 
 ``` bash
 $ ./counters_client inc "Hello, World"
 Hello, World: 1
 ```
+
+## Feedback
+
+I'd really love to hear your thoughts. How can I make this more idiomatic? Are there better patterns for this or that? Here's how you can help:
+
+1. Fork this repo.
+1. Commit any fixes/changes/etc.
+1. If you are so compelled, send a pull request.
+1. Send me an email, if you want: (brad.heller@gmail.com)[mailto: brad.heller@gmail.com]
