@@ -3,7 +3,7 @@
 This is an example project that shows how to set up and use protocol buffers
 and RPC with Go.
 
-## 1. Installing the Procotol Buffers compiler, `protoc`
+## 1. Install Google's Procotol Buffers compiler, `protoc`
 
 To install the base protocol buffers compiler:
 
