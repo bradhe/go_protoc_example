@@ -1,22 +1,22 @@
 package main
 
 import (
-  "errors"
-  "os"
   "counters"
+  "errors"
   "fmt"
+  "os"
 )
 
 func main() {
-  service, err := counters.NewCountersService("localhost:3000")
-
+  service, err := counters.Dial("localhost:3000")
+  
   if err != nil {
     panic(err)
   }
-
+  
   op := os.Args[1]
   name := os.Args[2]
-
+  
   if op == "inc" {
     fmt.Printf("%s: %d\n", name, service.Increment(name))
   } else if op == "dec" {
