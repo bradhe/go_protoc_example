@@ -1,25 +1,29 @@
 package counters
 
-func NewCountRequest(name string) CountRequest {
-  return CountRequest{&name, nil}
-}
-
-func NewCountResponse(count int32) CountResponse {
-  return CountResponse{&count, nil}
-}
-
-// Sets the count of the current response.
-func (this *CountResponse) SetCount(count int32) {
-  // This feels so dirty...
-  this.Count = &count
-}
-
+// A client wrapper for interacting with the CountersService service over RPC.
 type CountClient struct {
   // The underlying service object.
   service CountersService
 }
 
-func NewCountersService(addr string) (CountClient, error) {
+// Creates a new CountRequest object with the supplied name.
+func NewCountRequest(name string) CountRequest {
+  return CountRequest{&name, nil}
+}
+
+// Creates a new CountResponse object with the supplied count.
+func NewCountResponse(count int32) CountResponse {
+  return CountResponse{&count, nil}
+}
+
+// Sets the Count value attribute on the CountResponse object.
+func (this *CountResponse) SetCount(count int32) {
+  // This feels so dirty...
+  this.Count = &count
+}
+
+// Creates a new client for the CountersService service.
+func Dial(addr string) (CountClient, error) {
   service, err := DialCountersService(addr)
 
   if err != nil {
@@ -29,6 +33,7 @@ func NewCountersService(addr string) (CountClient, error) {
   return CountClient{service}, nil
 }
 
+// Increments the counter with the supplied name.
 func (this *CountClient) Increment(name string) int32 {
   request := NewCountRequest(name)
   response := CountResponse{}
@@ -37,6 +42,7 @@ func (this *CountClient) Increment(name string) int32 {
   return response.GetCount()
 }
 
+// Decrements the counter with the supplied name.
 func (this *CountClient) Decrement(name string) int32 {
   request := NewCountRequest(name)
   response := CountResponse{}
@@ -45,6 +51,7 @@ func (this *CountClient) Decrement(name string) int32 {
   return response.GetCount()
 }
 
+// Gets the counter with the supplied name.
 func (this *CountClient) Get(name string) int32 {
   request := NewCountRequest(name)
   response := CountResponse{}
