@@ -12,6 +12,7 @@ type countersServiceImpl struct {
   // TODO: Add...anything...
 }
 
+// Implementation of the Increment interface function.
 func (c countersServiceImpl) Increment(in *counters.CountRequest, out *counters.CountResponse) error {
   counts[in.GetName()] += 1
   out.SetCount(counts[in.GetName()])
@@ -21,6 +22,7 @@ func (c countersServiceImpl) Increment(in *counters.CountRequest, out *counters.
   return nil
 }
 
+// Implementation of the Decrement interface function.
 func (c countersServiceImpl) Decrement(in *counters.CountRequest, out *counters.CountResponse) error {
   counts[in.GetName()] -= 1
 
@@ -35,6 +37,7 @@ func (c countersServiceImpl) Decrement(in *counters.CountRequest, out *counters.
   return nil
 }
 
+// Implementation of the Get interface function.
 func (c countersServiceImpl) Get(in *counters.CountRequest, out *counters.CountResponse) error {
   out.SetCount(counts[in.GetName()])
   log.Println(fmt.Sprintf("Getting %s: %d", in.GetName(), counts[in.GetName()]))
