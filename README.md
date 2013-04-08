@@ -9,8 +9,8 @@ There are three folders under `src`:
 
 1. `counters` is where the library code lives, including the generated protoc
    code.
-1. `counter_server` is the server component
-1. `counter_client` is a CLI for interacting with the server.
+1. `counters_server` is the server component
+1. `counters_client` is a CLI for interacting with the server.
 
 ## Getting Up and Running
 
