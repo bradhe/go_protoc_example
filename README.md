@@ -1,4 +1,4 @@
-# Up and running with Go, Protocol Buffers, and RPC
+# RPC in Go with Protocol Buffers
 
 This is an example project that shows how to set up and use protocol buffers
 and RPC with Go.
